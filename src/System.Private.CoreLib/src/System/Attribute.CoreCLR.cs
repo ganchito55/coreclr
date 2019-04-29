@@ -569,7 +569,7 @@ namespace System
             if (member.MemberType == MemberTypes.Method && inherit)
                 return InternalParamGetCustomAttributes(element, attributeType, inherit);
 
-            return (Attribute[])element.GetCustomAttributes(attributeType, inherit);
+            return (element.GetCustomAttributes(attributeType, inherit) as Attribute[])!;
         }
 
         public static Attribute[] GetCustomAttributes(ParameterInfo element, bool inherit)
@@ -585,7 +585,7 @@ namespace System
             if (member.MemberType == MemberTypes.Method && inherit)
                 return InternalParamGetCustomAttributes(element, null, inherit);
 
-            return (Attribute[])element.GetCustomAttributes(typeof(Attribute), inherit);
+            return (element.GetCustomAttributes(typeof(Attribute), inherit) as Attribute[])!;
         }
 
         public static bool IsDefined(ParameterInfo element, Type attributeType)
