@@ -569,7 +569,7 @@ namespace System
             if (member.MemberType == MemberTypes.Method && inherit)
                 return InternalParamGetCustomAttributes(element, attributeType, inherit) as Attribute[];
 
-            return (element.GetCustomAttributes(attributeType, inherit)as Attribute[])!;
+            return (element.GetCustomAttributes(attributeType, inherit) as Attribute[])!;
         }
 
         public static Attribute[] GetCustomAttributes(ParameterInfo element, bool inherit)
